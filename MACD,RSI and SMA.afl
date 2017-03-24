@@ -45,18 +45,18 @@ IF MACD IN COMING DAYS GIVES BUY CROSS THEN SUPERB
 ONCE U ENTER THE TRADE APPLY 20DSMA AS TRAILING STOPLOSS.. ONE CLOSE BELOW 20DSMA AND IMMEDIATE BREACH OF THIS CLOSING BAR LOW IS EXIT
 */
 
-SetTradeDelays (0,0,0,0 )
-SetOption("InitialEquity", 100000)
-SetOption("MinShares",1)
-SetOption("CommissionMode",2)
-SetOption("CommissionAmount",20)
-SetOption("AccountMargin",100)
-SetOption("RefreshWhenCompleted",True)
-SetPositionSize(100,spsPercentOfEquity)
-SetOption( "AllowPositionShrinking",True)
+SetTradeDelays (0,0,0,0 );
+SetOption("InitialEquity", 100000);
+SetOption("MinShares",1);
+SetOption("CommissionMode",2);
+SetOption("CommissionAmount",20);
+SetOption("AccountMargin",100);
+SetOption("RefreshWhenCompleted",True);
+SetPositionSize(100,spsPercentOfEquity);
+SetOption( "AllowPositionShrinking",True);
 SetOption("MaxOpenPositions",5);
 PositionSize = 100000/5;
-SetChartOptions(0,chartShowArrows|chartShowDates)
+SetChartOptions(0,chartShowArrows|chartShowDates);
 _N(Title = StrFormat("{{NAME}} - {{INTERVAL}} {{DATE}} Open %g, Hi %g, Lo %g, Close %g (%.1f%%) {{VALUES}}", O, H, L, C ));
 Plot( Close, "Price", colorWhite, styleCandle );
 NewDay = (Day()!= Ref(Day(), -1)) OR BarIndex() == 0;  
